@@ -44,7 +44,7 @@ function playground() {
         await page.setViewport({width: 1920, height: 1080});
         await page.setRequestInterception(true);
         page.on('request', (req) => {
-            if(req.resourceType() == 'stylesheet' || req.resourceType() == 'image' || req.resourceType() == 'font') {
+            if(req.resourceType() == 'stylesheet' || req.resourceType() == 'image' || req.resourceType() == 'font' || req.resourceType() == 'script') {
                 req.abort();
             }
             else {
@@ -55,6 +55,9 @@ function playground() {
         
         await page.click('body > a');
 
+        await page.addStyleTag({ content: ' .down { display:block !important;}'});
+
+        await page.click('body > .down > a');
     })();
 }
 
