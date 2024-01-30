@@ -38,7 +38,7 @@ function playground() {
         const client = await page.target().createCDPSession()
         await client.send('Page.setDownloadBehavior', {
           behavior: 'allow',
-          downloadPath: 'img'
+          downloadPath: downloadPath,
         })
        
         await page.setViewport({width: 1920, height: 1080});
