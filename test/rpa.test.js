@@ -1,7 +1,7 @@
-const puppeteer = require('puppeteer')
-
-describe("My first Setup Testing",()=>{
-     it("Home landing page",async()=>{
-    const browser = await puppeteer.launch({headless:false})
-     });
-});
+// const puppeteer = require('puppeteer')
+// const index = require('../index');
+// describe("Puppeteer Testing era",()=>{
+//      it("home testing",async()=>{
+//         index.pupper()
+//      });
+// });
